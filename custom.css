@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 50px;
+    scroll-behavior: smooth; /* enable smooth scrolling */
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; /* white background */
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* add a subtle shadow to make it stand out */
+    padding-right: 13.961%; 
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end; /* align to the right */
+}
+
+nav ul li {
+    margin: 0 10px; /* adjusted spacing a bit */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333; /* changed color to dark for visibility on white background */
+    padding: 10px 20px; /* increased padding */
+    font-size: 18px; /* larger font */
+    border: 1px solid #333; /* border around the button */
+    border-radius: 5px; /* rounded corners */
+    transition: background-color 0.3s, color 0.3s; /* transition for hover effect */
+}
+
+nav a:hover {
+    background-color: #ddd; /* color change on hover */
+}
+
+.section-anchor {
+    display: block;
+    padding-top: 70px;     /* Adjust this based on your navbar height */
+    margin-top: -70px;    /* Make this the negative value of padding-top */
+    visibility: hidden;
+}
+
+.custom-button:hover {
+    background-color: #2980b9 !important; /* Hover color */
+}
+
+
+.video-buttons ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.video-buttons ul li a {
+    text-decoration: none;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 15px;  /* This gives rounded rectangle appearance */
+    font-size: larger;
+    color: black;
+    transition: background-color 0.3s;
+    border: 1px solid black;
+}
+
+.video-buttons ul li a:hover {
+    background-color: #ddd;
+}
+
+.video-buttons {
+    display: flex;
+    justify-content: center;  /* Horizontally center the list items */
+}
+
+.scene-selection ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.scene-selection ul li {
+    list-style-type: none;
+    margin: 0 15px;
+}
+
+.scene-selection ul li a img {
+    max-width: 150px;  /* Adjust as needed */
+    border-radius: 15px; /* Matching the style */
+    border: 1px solid black;
+    transition: box-shadow 0.3s;
+}
+
+.scene-selection ul li a:hover img {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Default styles (optimized for mobile) */
+.video-buttons {
+    display: flex;
+    flex-direction: column; /* stack children vertically */
+    align-items: center; /* center children horizontally */
+    justify-content: center; /* center children vertically */
+    width: 100%; /* take the full width of its parent */
+}
+
+.scene-selection ul li a video {
+    max-width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+.video-buttons ul {
+    flex-direction: column; /* Stack the list items vertically */
+    width: 100%; /* take the full width of its parent */
+    display: flex;
+    align-items: center; /* center list items horizontally */
+    justify-content: center; /* center list items vertically */
+}
+
+.video-buttons ul li {
+    display: flex; 
+    justify-content: center; /* Horizontally center the anchor tags */
+    width: 100%; 
+    margin-bottom: 10px; 
+}
+
+.video-buttons ul li a {
+    display: block; 
+    text-align: center; 
+}
+
+/* Styles for larger screens */
+@media screen and (min-width: 768px) {
+    .scene-selection ul li a video {
+        max-width: 150px; 
+    }
+    
+    .video-buttons ul {
+        flex-direction: row; 
+    }
+
+    .video-buttons ul li {
+        display: inline-block;
+        width: auto;
+        margin: 0 15px;
+        margin-bottom: 0; 
+    }
+    
+    .video-buttons ul li a {
+        display: inline; 
+    }
+}
+
+/* Default styles (optimized for mobile) */
+.banner {
+    width: 100%;  /* Make it take the full width of its container on mobile */
+    height: auto;  /* Height will be automatically adjusted based on the width and video aspect ratio */
+}
+
+/* Styles for larger screens (e.g., desktops) */
+@media screen and (min-width: 768px) {  /* Adjust the 768px breakpoint if needed */
+    .banner {
+        height: 580px;  /* Set the height as specified */
+        width: auto;  /* Width will be adjusted based on the height and video aspect ratio */
+    }
+}
