@@ -18,74 +18,73 @@
 	    
 </head>
 
-		
-
-<article class='blog-post'>
 
 <nav>
   <ul>
-        <li><a href="#interact" data-scroll>Interactive Demos</a></li>    
-        <li><a href="#action-rich" data-scroll>Action-Rich</a></li>
+    <li><a href="#" class="logo-link">
+        <img src="materials/unisim.png" alt="UniSim" class="logo">
+    </a></li>      
+        <li><a href="#video-player-container" data-scroll>Interactive Demos</a></li>    
+        <!-- <li><a href="#action-rich" data-scroll>Action-Rich</a></li> -->
         <li><a href="#long-horizon" data-scroll>Long-Horizon</a></li>
-        <li><a href="#diversity" data-scroll>Diversity</a></li>
+        <!-- <li><a href="#diversity" data-scroll>Diversity</a></li> -->
         <li><a href="#planning" data-scroll>Planning</a></li>
         <li><a href="#rl" data-scroll>RL</a></li>
     </ul>
 </nav>
-  
-
-<div class=blog-intro-container>
-		<h1 class='too-long'>UniSim: Learning Interactive Real-World Simulators</h1>
 
 
-		<div class=intro>
-			<p><span style="font-weight: 400;">Generative models trained on internet data have revolutionized how text, image, and video content can be created. Perhaps the next milestone for generative models is to simulate realistic experience in response to actions carried out by humans, robots, and other types of interactive agents. Applications of a real-world simulator range from controllable content creation in games and movies to training embodied agents purely in simulation that can be directly deployed in the real world. In this work, we explore these possibilities around learning a universal simulator (UniSim) of real-world interactions through generative modeling. We first make the important observation that natural datasets available for learning a real-world simulator are often rich along different axes (e.g., rich labeled objects in image data, rich actions in robotics data, and rich movements in navigation data). With careful orchestration of diverse datasets, each providing a different aspect of the overall experience, UniSim can emulate how humans and agents interact with the world by simulating the visual outcome of both high-level instructions such as “open the drawer” and low-level controls such as “move to x, y location” from otherwise static scenes and objects. Use cases for such a real-world simulator are vast. As an example, we use UniSim to simulate interactive experiences to train both high-level vision-language planners and low-level reinforcement learning policies, each of which exhibit significant real-world transfer from purely training in a real-world like simulator. Lastly, we show that other types of intelligence such as video captioning and detection models can also benefit from simulated experiences in UniSim, opening up even wider applications of a real-world simulator.</p>
-<p><a href="materials/paper.pdf" target="_blank" rel="noopener" data-display-type="button" class="custom-button">paper</a></p>
-		</div>
-		<div class=blog-meta>
-			<div>
-							</div>
-			<div>
-				<span class=reading-time></span>
-			</div>
-		</div>
-	</div>
+<article class='blog-post'>
 
-<div class="banner-container">
-  <video class=banner loop muted playsinline autoplay height=580><source src="materials/banner.mp4"></video>
-</div>
+  <div class=blog-intro-container>
+  <h1 class='too-long'>UniSim: Learning Interactive Real-World Simulators</h1>
 
+    <div id="authors">
+        <center>
+            <div class="author-row-new">
+              <a href="https://sherryy.github.io/" style="color: darkblue; text-decoration: none;">Sherry Yang<sup>12</sup></a>,
+                <a href="https://yilundu.github.io/" style="color: darkblue; text-decoration: none;">Yilun Du<sup>3</sup></a>,
+                <a href="http://www.cs.utoronto.ca/~kamyar/" style="color: darkblue; text-decoration: none;">Kamyar Ghasemipour<sup>2</sup></a>,
+                <a href="https://jonathantompson.github.io/" style="color: darkblue; text-decoration: none;">Jonathan Tompson<sup>2</sup></a>,
+                <a href="http://webdocs.cs.ualberta.ca/~dale/" style="color: darkblue; text-decoration: none;">Dale Schuurmans<sup>24</sup></a>,
+                <a href="http://people.eecs.berkeley.edu/~pabbeel/" style="color: darkblue; text-decoration: none;">Pieter Abbeel<sup>1</sup></a>
+            </div>
+        </center>
+        <center>
+        <div class="affiliations">
+            <span><sup>1</sup> UC Berkeley</span>
+            <span><sup>2</sup> Google DeepMind</span>
+            <span><sup>3</sup> MIT</span>
+            <span><sup>4</sup> University of Alberta</span><br/>
+        </div>
+    </div>  
+  </div>  
 
-    <div class="copy" >
-
-  <div class="copy" >  
-    <div class=content id="interact">
-      <h2><span style="font-weight: 400;">Interactive Demos</span></h2>
-      <p><span style="font-weight: 400;">Please select an initial observation and language actions you would like to use for interaction.</span></p>
-    </div>
-  </div>
       
+<div id="video-player-container">
 
+      <span style="font-weight: 400; font-size: larger; color: white"><p style="text-align:center">Please select an observation and language actions you would like to use for interaction.</p></span>  
+  
 <!-- Scene Selection Bar -->
 <div class="scene-selection">
     <ul>
-        <li><a href="#" onclick="chooseScene('kitchen', event);" title="Kitchen Scene"><video preload="metadata" src="materials/cut_carrot-final.mp4" width="150"></video></a></li>
-        <li><a href="#" onclick="chooseScene('switch', event);" title="Switch Press Scene"><video preload="metadata" src="materials/press_left-final.mp4" width="150" class="faded"></video></a></li>
-        <li><a href="#" onclick="chooseScene('uncover', event);" title="Uncover Scene"><video preload="metadata" src="materials/uncover_pen-final.mp4" width="150" class="faded"></video></a></li>
-	<li><a href="#" onclick="chooseScene('gg', event);" title="Golden Gate Scene"><video preload="metadata" src="materials/gg_left.mp4" width="150" class="faded"></video></a></li>
-	<li><a href="#" onclick="chooseScene('sc', event);" title="Sistine Chapel Scene"><video preload="metadata" src="materials/sc_left.mp4" width="150" class="faded"></video></a></li>	
+        <li><a href="#" onclick="chooseScene('kitchen', event);" title="Kitchen Scene"><video src="materials/cut_carrot-final.mp4" width="150"></video></a></li>
+        <li><a href="#" onclick="chooseScene('uncover', event);" title="Uncover Scene"><video src="materials/uncover_pen-final.mp4" width="150" class="faded"></video></a></li>
+        <li><a href="#" onclick="chooseScene('switch', event);" title="Switch Press Scene"><video src="materials/press_left-final.mp4" width="150" class="faded"></video></a></li>	
+	<li><a href="#" onclick="chooseScene('gg', event);" title="Golden Gate Scene"><video src="materials/gg_left.mp4" width="150" class="faded"></video></a></li>
+	<li><a href="#" onclick="chooseScene('sc', event);" title="Sistine Chapel Scene"><video src="materials/sc_left.mp4" width="150" class="faded"></video></a></li>	
     </ul>
 </div>
-
+<br>
 <!-- Buttons -->
 <div class="video-buttons" id="kitchen-buttons">
   <div class="step-container">
     <div class="step-label">Step 1:</div> <!-- Step label for primary buttons -->
     <ul>
-      <li><a href="#" onclick="playVideo('materials/wash_hand-final.mp4', 'wash_hand', event);">Wash hands</a></li>
-      <li><a href="#" onclick="playVideo('materials/pick_bowl-final.mp4', 'pick_bowl', event);">Pick up bowl</a></li>
-      <li><a href="#" onclick="playVideo('materials/cut_carrot-final.mp4', 'cut_carrot', event);">Cut carrots</a></li>
-      <li><a href="#" onclick="playVideo('materials/dry_hand-final.mp4', 'dry_hand', event);">Dry hands</a></li>
+      <li><a href="#" onclick="playVideo('materials/wash_hand-final.mp4', 'kitchen_wash', event);">Wash hands</a></li>
+      <li><a href="#" onclick="playVideo('materials/pick_bowl-final.mp4', 'kitchen_pick', event);">Pick up bowl</a></li>
+      <li><a href="#" onclick="playVideo('materials/cut_carrot-final.mp4', 'kitchen_cut', event);">Cut carrots</a></li>
+      <li><a href="#" onclick="playVideo('materials/dry_hand-final.mp4', 'kitchen_dry', event);">Dry hands</a></li>
     </ul>
   </div>
 
@@ -97,27 +96,17 @@
   </div>
 </div>
 
-<!-- Buttons for Switch Scene -->
-<div class="video-buttons" id="switch-buttons" style="display: none;">
-    <ul>
-        <li><a href="#" onclick="playVideo('materials/press_left-final.mp4', '', event);">Press left</a></li>
-        <li><a href="#" onclick="playVideo('materials/press_middle-final.mp4', '', event);">Press middle</a></li>
-        <li><a href="#" onclick="playVideo('materials/press_right-final.mp4', '', event);">Press right</a></li>
-        <li><a href="#" onclick="playVideo('materials/press_plug-final.mp4', '', event);">Plug in cable</a></li>
-    </ul>
-</div>
-
 <!-- Buttons for Uncover Scene -->
 <div class="video-buttons" id="uncover-buttons" style="display: none;">
   <div class="step-container">
     <div class="step-label">Step 1:</div> <!-- Step label for primary buttons -->  
     <ul>
-      <li><a href="#" onclick="playVideo('materials/uncover_toothpaste-final.mp4', '', event);">Toothpaste</a></li>
+      <li><a href="#" onclick="playVideo('materials/uncover_toothpaste-final.mp4', 'uncover_toothpaste', event);">Toothpaste</a></li>
       <li><a href="#" onclick="playVideo('materials/uncover_spider-final.mp4', 'uncover_spider', event);">Spider</a></li>
       <li><a href="#" onclick="playVideo('materials/uncover_pen-final.mp4', 'uncover_pen', event);">Pen</a></li>
-      <li><a href="#" onclick="playVideo('materials/uncover_plate-final.mp4', '', event);">Plate</a></li>
-      <li><a href="#" onclick="playVideo('materials/uncover_bottle-final.mp4', '', event);">Bottle</a></li>
-      <li><a href="#" onclick="playVideo('materials/uncover_pickup-final.mp4', '', event);">Pickup</a></li>
+      <li><a href="#" onclick="playVideo('materials/uncover_plate-final.mp4', 'uncover_plate', event);">Plate</a></li>
+      <li><a href="#" onclick="playVideo('materials/uncover_bottle-final.mp4', 'uncover_bottle', event);">Bottle</a></li>
+      <li><a href="#" onclick="playVideo('materials/uncover_pickup-final.mp4', 'uncover_pickup', event);">Pickup</a></li>
     </ul>
   </div>
 
@@ -129,8 +118,23 @@
   </div>  
 </div>
 
+<!-- Buttons for Switch Scene -->
+<div class="video-buttons" id="switch-buttons" style="display: none;">
+  <div class="step-container">  
+  <div class="step-label">Step 1:</div>
+    <ul>
+        <li><a href="#" onclick="playVideo('materials/press_left-final.mp4', '', event);">Press left</a></li>
+        <li><a href="#" onclick="playVideo('materials/press_middle-final.mp4', '', event);">Press middle</a></li>
+        <li><a href="#" onclick="playVideo('materials/press_right-final.mp4', '', event);">Press right</a></li>
+        <li><a href="#" onclick="playVideo('materials/press_plug-final.mp4', '', event);">Plug in cable</a></li>
+    </ul>
+  </div>
+</div>
+
 <!-- Buttons for Golden Gate -->
 <div class="video-buttons" id="gg-buttons" style="display: none;">
+  <div class="step-container">  
+  <div class="step-label">Step 1:</div>  
     <ul>
       <li><a href="#" onclick="playVideo('materials/gg_left.mp4', '', event);">Left</a></li>
       <li><a href="#" onclick="playVideo('materials/gg_right.mp4', '', event);">Right</a></li>
@@ -139,16 +143,20 @@
       <li><a href="#" onclick="playVideo('materials/gg_zoomin.mp4', '', event);">Zoom in</a></li>
       <li><a href="#" onclick="playVideo('materials/gg_zoomout.mp4', '', event);">Zoom out</a></li>
     </ul>
+  </div>
 </div>
 
 <!-- Buttons for Sistine Chapel -->
 <div class="video-buttons" id="sc-buttons" style="display: none;">
+  <div class="step-container">  
+  <div class="step-label">Step 1:</div>  
     <ul>
       <li><a href="#" onclick="playVideo('materials/sc_left.mp4', '', event);">Left</a></li>
       <li><a href="#" onclick="playVideo('materials/sc_right.mp4', '', event);">Right</a></li>
       <li><a href="#" onclick="playVideo('materials/sc_down.mp4', '', event);">Down</a></li>
       <li><a href="#" onclick="playVideo('materials/sc_zoomin.mp4', '', event);">Zoom in</a></li>
     </ul>
+  </div>
 </div>
 
 
@@ -160,38 +168,53 @@
         </video>
     </span>
 </div>
-  
-  
-  <div class="copy" >  
-    <div class=content id="action-rich">
-      <h2><span style="font-weight: 400;">Action-Rich Simulations</span></h2>
-      <p><span style="font-weight: 400;">One major difference between an interactive real-world simulator and typical video generation is that a simulator should support a diverse set of actions. Below, we demonstrate how UniSim can simulate different experiences given different actions starting from the same initial frame.</span></p>
-    </div>
+
+</div>
+
+<div class=blog-intro-container>
+  <p style="text-align:center"><a href="materials/paper.pdf" target="_blank" rel="noopener" data-display-type="button" class="custom-button">paper</a></p>  
+  <div class=intro>
+    <p><span style="font-weight: 400;">Generative models trained on internet data have revolutionized how text, image, and video content can be created. Perhaps the next milestone for generative models is to simulate realistic experience in response to actions carried out by humans, robots, and other types of interactive agents. Applications of a real-world simulator range from controllable content creation in games and movies to training embodied agents purely in simulation that can be directly deployed in the real world. In this work, we explore these possibilities around learning a universal simulator (UniSim) of real-world interactions through generative modeling. We first make the important observation that natural datasets available for learning a real-world simulator are often rich along different axes (e.g., rich labeled objects in image data, rich actions in robotics data, and rich movements in navigation data). With careful orchestration of diverse datasets, each providing a different aspect of the overall experience, UniSim can emulate how humans and agents interact with the world by simulating the visual outcome of both high-level instructions such as “open the drawer” and low-level controls such as “move to x, y location” from otherwise static scenes and objects. Use cases for such a real-world simulator are vast. As an example, we use UniSim to simulate interactive experiences to train both high-level vision-language planners and low-level reinforcement learning policies, each of which exhibit significant real-world transfer from purely training in a real-world like simulator. Lastly, we show that other types of intelligence such as video captioning and detection models can also benefit from simulated experiences in UniSim, opening up even wider applications of a real-world simulator.</p>
   </div>
-
-<div class="single-image ">
-  <span>
-    <video loop muted playsinline autoplay width=3840 height=2160><source src="materials/kitchen_word.mp4"></video>
-  </span>
 </div>
 
-<div class="single-image ">
-  <span>
-    <video loop muted playsinline autoplay width=3840 height=2160><source src="materials/switch_word.mp4"></video>
-  </span>
+
+<div class="banner-container">
+  <video class=banner loop muted playsinline autoplay height=580><source src="materials/banner.mp4"></video>
 </div>
 
-<div class="single-image ">
-  <span>
-    <video loop muted playsinline autoplay width=3840 height=2160><source src="materials/chapel_word.mp4"></video>
-  </span>
-</div>
+<div class="copy">
+  
+<!--   <div class="copy" >   -->
+<!--     <div class=content id="action-rich"> -->
+<!--       <h2><span style="font-weight: 400;">Action-Rich Simulations</span></h2> -->
+<!--       <p><span style="font-weight: 400;">One major difference between an interactive real-world simulator and typical video generation is that a simulator should support a diverse set of actions. Below, we demonstrate how UniSim can simulate different experiences given different actions starting from the same initial frame.</span></p> -->
+<!--     </div> -->
+<!--   </div> -->
 
-<div class="single-image ">
-  <span>
-    <video loop muted playsinline autoplay width=3840 height=2160><source src="materials/golden_gate_word.mp4"></video>
-  </span>
-</div>
+<!-- <div class="single-image "> -->
+<!--   <span> -->
+<!--     <video loop muted playsinline autoplay width=3840 height=2160><source src="materials/kitchen_word.mp4"></video> -->
+<!--   </span> -->
+<!-- </div> -->
+
+<!-- <div class="single-image "> -->
+<!--   <span> -->
+<!--     <video loop muted playsinline autoplay width=3840 height=2160><source src="materials/switch_word.mp4"></video> -->
+<!--   </span> -->
+<!-- </div> -->
+
+<!-- <div class="single-image "> -->
+<!--   <span> -->
+<!--     <video loop muted playsinline autoplay width=3840 height=2160><source src="materials/chapel_word.mp4"></video> -->
+<!--   </span> -->
+<!-- </div> -->
+
+<!-- <div class="single-image "> -->
+<!--   <span> -->
+<!--     <video loop muted playsinline autoplay width=3840 height=2160><source src="materials/golden_gate_word.mp4"></video> -->
+<!--   </span> -->
+<!-- </div> -->
 
 
 <div class="copy" >
@@ -216,42 +239,26 @@
 </div>
 
 
-<div class="copy" >
-  <div class=content id="diversity">
-    <h2><span style="font-weight: 400;">Diversity and Stochasticity</span></h2>
-    <p>
-      UniSim can also support highly diverse and stochastic environment transitions, such as diversity in objects being revealed after removing the towel, as well as locations and colors of objects being placed, as illustrated below.
-    </p>
-  </div>
-</div>
+<!-- <div class="copy" > -->
+<!--   <div class=content id="diversity"> -->
+<!--     <h2><span style="font-weight: 400;">Diversity and Stochasticity</span></h2> -->
+<!--     <p> -->
+<!--       UniSim can also support highly diverse and stochastic environment transitions, such as diversity in objects being revealed after removing the towel, as well as locations and colors of objects being placed, as illustrated below. -->
+<!--     </p> -->
+<!--   </div> -->
+<!-- </div> -->
 
-<div class="single-image ">
-  <span>
-    <video loop muted playsinline autoplay width=3840 height=2160><source src="materials/uncover_word.mp4"></video>
-  </span>
-</div>
+<!-- <div class="single-image "> -->
+<!--   <span> -->
+<!--     <video loop muted playsinline autoplay width=3840 height=2160><source src="materials/uncover_word.mp4"></video> -->
+<!--   </span> -->
+<!-- </div> -->
 
-<div class="single-image ">
-  <span>
-    <video loop muted playsinline autoplay width=3840 height=1060><source src="materials/put_word.mp4"></video>
-  </span>
-</div>
-
-
-<div class="copy" >
-  <div class=content id="planning">    
-    <h2><span style="font-weight: 400;">Long-Horizon Planning with UniSim</span></h2>
-    <p>
-      UniSim can be used to train other machine intelligence such as embodied planners. We concatenate long-horizon instructions and generate videos by doing repeated rollouts in UniSim. The resulting video and instruction data can then be used to train image-goal conditioned vision-language model (VLM) policies. The simulated plans and real-robot executions are shown below.      
-    </p>
-  </div>
-</div>
-
-<div class="single-image ">
-  <span>
-    <video loop muted playsinline autoplay width=3840 height=2160><source src="materials/hindsight_word.mp4"></video>
-  </span>
-</div>
+<!-- <div class="single-image "> -->
+<!--   <span> -->
+<!--     <video loop muted playsinline autoplay width=3840 height=1060><source src="materials/put_word.mp4"></video> -->
+<!--   </span> -->
+<!-- </div> -->
 
 <div class="copy" >
   <div class=content id="rl">    
@@ -280,6 +287,22 @@
     <video loop muted playsinline autoplay width=3840 height=2160><source src="materials/rl_real_video-fast.mp4"></video>
   </span>
 </div>
+
+<div class="copy" >
+  <div class=content id="planning">    
+    <h2><span style="font-weight: 400;">Long-Horizon Planning with UniSim</span></h2>
+    <p>
+      UniSim can be used to train embodied planners <b> purely in simulation</b>. We concatenate long-horizon instructions and generate videos by repeated rollouts in UniSim. The resulting videos and instructions can then be used to train goal conditioned vision-language model (VLM) policies. The simulated plans and <b> zero-shot </b> transfer to real robot are shown below.
+    </p>
+  </div>
+</div>
+
+<div class="single-image ">
+  <span>
+    <video loop muted playsinline autoplay width=3840 height=2160><source src="materials/hindsight_word.mp4"></video>
+  </span>
+</div>
+
 
 <div class="copy" >
   <div class=content id="related">    
@@ -314,6 +337,22 @@
         </div>
           <div>
 	    UniPi casts sequential decision making as a text-conditioned video generation problem. UniPi produces policies that can generalize to combinatorial and multi-task environments and able to utilize broad internet-scale text-video datasets.
+        </div>
+        </div>
+        </div>
+
+	<br>
+        <div class="row vspace-top">
+        <div class="col-sm-3">
+            <div class="move-down">
+                <img src="materials/video_adapter.png" class="img-fluid" alt="VideoAdapter" style="width:100%">
+            </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="paper-title">
+            <a href="https://video-adapter.github.io//" style="color: darkblue; text-decoration: none;">Probabilistic Adaptation of Black-Box Text-to-Video Models</a>
+        </div>
+          <div> Video Adapter is a framework for generating personalized, stylized, and domain-specific videos by leveraging pretrained black-box text-to-video diffusion models as a probabilistic prior without requiring access to pretrained model weights.
         </div>
         </div>
         </div>	

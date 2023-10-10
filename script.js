@@ -54,19 +54,19 @@ function playVideo(videoSrc, primaryAction, event) {
 	    secondaryButtonsContainer.innerHTML = '';
 
 	    // Determine the secondary buttons based on primary action
-	    if (primaryAction === 'wash_hand') {
+	    if (primaryAction === 'kitchen_wash') {
 		secondaryButtonsContainer.innerHTML = `
 		    <li><a href="#" onclick="playVideo('materials/Kitchen_wash_bowl.mp4', null, event);">Wash bowl</a></li>
 		    <li><a href="#" onclick="playVideo('materials/Kitchen_wash_water.mp4', null, event);">Shut off water</a></li>`;
-	    } else if (primaryAction === 'pick_bowl') {
+	    } else if (primaryAction === 'kitchen_pick') {
 		secondaryButtonsContainer.innerHTML = `
 		    <li><a href="#" onclick="playVideo('materials/Kitchen_bowl_carrot.mp4', null, event);">Put carrots in bowl</a></li>
 		    <li><a href="#" onclick="playVideo('materials/Kitchen_bowl_down.mp4', null, event);">Put bowl down</a></li>`;
-	    } else if (primaryAction === 'cut_carrot') {
+	    } else if (primaryAction === 'kitchen_cut') {
 		secondaryButtonsContainer.innerHTML = `
 		    <li><a href="#" onclick="playVideo('materials/Kitchen_carrot_clean.mp4', null, event);">Wash cutting board</a></li>
 		    <li><a href="#" onclick="playVideo('materials/Kitchen_carrot_wash.mp4', null, event);">Wash carrots</a></li>`;
-	    } else if (primaryAction === 'dry_hand') {
+	    } else if (primaryAction === 'kitchen_dry') {
 		secondaryButtonsContainer.innerHTML = `
 		    <li><a href="#" onclick="playVideo('materials/Kitchen_dry_table.mp4', null, event);">Wipe table</a></li>
 		    <li><a href="#" onclick="playVideo('materials/Kitchen_dry_sink.mp4', null, event);">Wash carrots</a></li>`;
@@ -89,7 +89,28 @@ function playVideo(videoSrc, primaryAction, event) {
                     <li><a href="#" onclick="playVideo('materials/pen_blue.mp4', null, event);">Put another blue pen</a></li>
                     <li><a href="#" onclick="playVideo('materials/pen_black.mp4', null, event);">Put another black pen</a></li>
                 `;		
+	    } else if (primaryAction === 'uncover_toothpaste') {
+                secondaryButtonsContainer.innerHTML = `
+                    <li><a href="#" onclick="playVideo('materials/toothpaste_pick.mp4', null, event);">Pickup toothpaste</a></li>
+                    <li><a href="#" onclick="playVideo('materials/toothpaste_left.mp4', null, event);">Slide toothpaste to the left</a></li>
+                `;		
+	    } else if (primaryAction === 'uncover_plate') {
+                secondaryButtonsContainer.innerHTML = `
+                    <li><a href="#" onclick="playVideo('materials/plate_apple.mp4', null, event);">Put apple on plate</a></li>
+                    <li><a href="#" onclick="playVideo('materials/plate_push.mp4', null, event);">Push plate further away</a></li>
+                `;		
+	    } else if (primaryAction === 'uncover_bottle') {
+                secondaryButtonsContainer.innerHTML = `
+                    <li><a href="#" onclick="playVideo('materials/bottle_right.mp4', null, event);">Move bottle to the right</a></li>
+                    <li><a href="#" onclick="playVideo('materials/bottle_cup.mp4', null, event);">Put a cup next to the bottle</a></li>
+                `;		
+	    } else if (primaryAction === 'uncover_pickup') {
+                secondaryButtonsContainer.innerHTML = `
+                    <li><a href="#" onclick="playVideo('materials/pickup_wipe.mp4', null, event);">Wipe the floor</a></li>
+                    <li><a href="#" onclick="playVideo('materials/pickup_walk.mp4', null, event);">Walk a few steps</a></li>
+                `;		
 	    }
+	    
 	    secondaryButtonsContainer.style.display = 'block';
 	}
     }

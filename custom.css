@@ -162,20 +162,12 @@ nav a:hover {
 
 /* Default styles (optimized for mobile) */
 .banner {
-    max-width: 100%; /* Ensure the video doesn't exceed the parent's width */    
     width: 100%;  /* Make it take the full width of its container on mobile */
     height: auto;  /* Height will be automatically adjusted based on the width and video aspect ratio */
 }
 
 .banner-container {
     text-align: center; /* Horizontal centering for inline and inline-block elements inside it */
-    width: 100%; /* Take full width of its parent */
-    
-    /* For vertical centering */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 580px; /* Same height as the video for desktop */
 }
 
 /* Styles for larger screens (e.g., desktops) */
@@ -205,16 +197,77 @@ nav a:hover {
     margin-bottom: 10px; /* Space between the steps */
 }
 
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#video-player-container {
+    max-width: 1000px; /* Or your preferred width */
+    margin: 20px auto; /* Center the container */
+    padding: 20px;
+    border: 5px solid #000; /* Adding a border */
+    border-radius: 15px; /* Rounded edges */
+    background-color: #1e1e1e; /* Dark background for video player effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    position: relative; /* To position potential child elements absolutely if required */
+}
+
+#video-player-container .scene-thumbnails {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#video-player-container .video-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#video-player-container .single-image {
+    text-align: center; /* Center the image */
+    margin-bottom: 20px;
+}
+
+#video-player-container video, 
+#video-player-container img {
+    max-width: 100%; /* Ensure content scales inside the container */
+    border-radius: 10px; /* Slight rounded edges for videos/images */
+}
+
 .step-label {
-    background-color: #fff;
+    background-color: #1e1e1e;
     padding: 10px 20px;
     border-radius: 15px;
     font-size: larger;
-    color: black;
-    text-align: right;
+    color: #fff;
     margin-right: 15px;  /* Add some space between the label and buttons */
     cursor: default;
     flex-shrink: 0;
     flex-direction: row;
     display: flex;
+    border: none;
+}
+
+h2 {
+    text-align: center;
+}
+
+.logo-link {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    border: none; /* remove any border */
+}
+
+.logo {
+    height: 35px; /* or any desired height */
+    width: auto;
+    display: block; /* this will remove any whitespace underneath the image */
+    border: none; /* remove any border */
 }
