@@ -77,6 +77,7 @@ nav a:hover {
 
 .video-buttons {
     display: flex;
+    flex-direction: column;   /* stack children vertically */    
     justify-content: center;  /* Horizontally center the list items */
 }
 
@@ -161,8 +162,20 @@ nav a:hover {
 
 /* Default styles (optimized for mobile) */
 .banner {
+    max-width: 100%; /* Ensure the video doesn't exceed the parent's width */    
     width: 100%;  /* Make it take the full width of its container on mobile */
     height: auto;  /* Height will be automatically adjusted based on the width and video aspect ratio */
+}
+
+.banner-container {
+    text-align: center; /* Horizontal centering for inline and inline-block elements inside it */
+    width: 100%; /* Take full width of its parent */
+    
+    /* For vertical centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 580px; /* Same height as the video for desktop */
 }
 
 /* Styles for larger screens (e.g., desktops) */
@@ -171,4 +184,37 @@ nav a:hover {
         height: 580px;  /* Set the height as specified */
         width: auto;  /* Width will be adjusted based on the height and video aspect ratio */
     }
+}
+
+.faded {
+    opacity: 0.3;
+    transition: opacity 0.3s;
+}
+
+.scene-selection ul li a:hover video {
+    opacity: 1;  /* When hovering over a faded thumbnail, it'll look less faded to indicate interactivity */
+}
+
+.video-buttons ul {
+    text-align: center; /* This ensures the list items are centered within the ul */
+}
+
+.step-container {
+    display: flex;
+    align-items: center;  /* Vertically center align content */
+    margin-bottom: 10px; /* Space between the steps */
+}
+
+.step-label {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: larger;
+    color: black;
+    text-align: right;
+    margin-right: 15px;  /* Add some space between the label and buttons */
+    cursor: default;
+    flex-shrink: 0;
+    flex-direction: row;
+    display: flex;
 }
