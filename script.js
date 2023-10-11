@@ -37,7 +37,10 @@ function playVideo(videoSrc, primaryAction, event) {
 
     source.src = videoSrc;
     videoPlayer.load();
-    videoPlayer.play();    
+    //videoPlayer.play();
+    videoPlayer.addEventListener('canplaythrough', function() {
+	videoPlayer.play();
+    });
 
     let secondaryButtonsContainer; // Reference to the container holding secondary buttons
     //const secondaryButtonsContainer = document.getElementById('kitchen-secondary-buttons'); // Make sure this line exists
@@ -69,7 +72,7 @@ function playVideo(videoSrc, primaryAction, event) {
 	    } else if (primaryAction === 'kitchen_dry') {
 		secondaryButtonsContainer.innerHTML = `
 		    <li><a href="#" onclick="playVideo('materials/Kitchen_dry_table.mp4', null, event);">Wipe table</a></li>
-		    <li><a href="#" onclick="playVideo('materials/Kitchen_dry_sink.mp4', null, event);">Wash carrots</a></li>`;
+		    <li><a href="#" onclick="playVideo('materials/Kitchen_dry_sink.mp4', null, event);">Wipe sink</a></li>`;
 	    }
 
 	    // Show the secondary buttons
