@@ -37,10 +37,10 @@ function playVideo(videoSrc, primaryAction, event) {
 
     source.src = videoSrc;
     videoPlayer.load();
-    //videoPlayer.play();
-    videoPlayer.addEventListener('canplaythrough', function() {
-	videoPlayer.play();
-    });
+    videoPlayer.play();
+    // videoPlayer.addEventListener('canplaythrough', function() {
+    // 	videoPlayer.play();
+    // });
 
     let secondaryButtonsContainer; // Reference to the container holding secondary buttons
     //const secondaryButtonsContainer = document.getElementById('kitchen-secondary-buttons'); // Make sure this line exists
