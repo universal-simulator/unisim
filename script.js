@@ -38,21 +38,16 @@ function playVideo(videoSrc, primaryAction, event) {
     source.src = videoSrc;
     videoPlayer.load();
     videoPlayer.play();
-    // videoPlayer.addEventListener('canplaythrough', function() {
-    // 	videoPlayer.play();
-    // });
 
     let secondaryButtonsContainer; // Reference to the container holding secondary buttons
-    //const secondaryButtonsContainer = document.getElementById('kitchen-secondary-buttons'); // Make sure this line exists
-    //document.getElementById('step2-container').style.display = 'flex';
-    
+
     // If a primary action is provided, then set secondary buttons
     if(primaryAction) {
         // Choose the right set of secondary buttons based on scene and primary action
         if (primaryAction.startsWith('kitchen')) {
             secondaryButtonsContainer = document.getElementById('kitchen-secondary-buttons');
             document.getElementById('step2-container').style.display = 'flex';
-	
+
 	    // Reset content of secondary buttons
 	    secondaryButtonsContainer.innerHTML = '';
 
@@ -73,6 +68,34 @@ function playVideo(videoSrc, primaryAction, event) {
 		secondaryButtonsContainer.innerHTML = `
 		    <li><a href="#" onclick="playVideo('materials/Kitchen_dry_table.mp4', null, event);">Wipe table</a></li>
 		    <li><a href="#" onclick="playVideo('materials/Kitchen_dry_sink.mp4', null, event);">Wipe sink</a></li>`;
+	    }
+
+	    // Show the secondary buttons
+	  secondaryButtonsContainer.style.display = 'block';
+        } else if (primaryAction.startsWith('drawer')) {
+            secondaryButtonsContainer = document.getElementById('drawer-secondary-buttons');
+            document.getElementById('drawer-step2-container').style.display = 'flex';
+
+	    // Reset content of secondary buttons
+	    secondaryButtonsContainer.innerHTML = '';
+
+	    // Determine the secondary buttons based on primary action
+	    if (primaryAction === 'drawer_sponge') {
+		secondaryButtonsContainer.innerHTML = `
+		    <li><a href="#" onclick="playVideo('materials/drawer_sponge_out.mp4', null, event);">Put sponge on top</a></li>
+		    <li><a href="#" onclick="playVideo('materials/drawer_sponge_close.mp4', null, event);">Close bottom drawer</a></li>`;
+	    } else if (primaryAction === 'drawer_bottom') {
+		secondaryButtonsContainer.innerHTML = `
+		    <li><a href="#" onclick="playVideo('materials/drawer_bottom_bottom.mp4', null, event);">Open bottom drawer</a></li>
+		    <li><a href="#" onclick="playVideo('materials/drawer_bottom_top.mp4', null, event);">Open top drawer</a></li>`;
+	    } else if (primaryAction === 'drawer_middle') {
+		secondaryButtonsContainer.innerHTML = `
+		    <li><a href="#" onclick="playVideo('materials/drawer_middle_close.mp4', null, event);">Close middle drawer</a></li>
+		    <li><a href="#" onclick="playVideo('materials/drawer_middle_bowl.mp4', null, event);">Pickup bowl</a></li>`;
+	    } else if (primaryAction === 'drawer_top') {
+	      secondaryButtonsContainer.innerHTML = `
+		    <li><a href="#" onclick="playVideo('materials/drawer_top_close.mp4', null, event);">Close top drawer</a></li>
+		    <li><a href="#" onclick="playVideo('materials/drawer_top_sponge.mp4', null, event);">Put sponge in drawer</a></li>`;
 	    }
 
 	    // Show the secondary buttons
@@ -127,12 +150,14 @@ function chooseScene(scene, event) {
     const source = videoPlayer.querySelector('source');
     const kitchenButtons = document.getElementById('kitchen-buttons');
     const switchButtons = document.getElementById('switch-buttons');
+    const drawerButtons = document.getElementById('drawer-buttons');
     const uncoverButtons = document.getElementById('uncover-buttons');
     const ggButtons = document.getElementById('gg-buttons');
     const scButtons = document.getElementById('sc-buttons');
 
     const kitchenThumbnail = document.querySelector('.scene-selection video[src="materials/cut_carrot-final.mp4"]');
     const switchThumbnail = document.querySelector('.scene-selection video[src="materials/press_left-final.mp4"]');
+    const drawerThumbnail = document.querySelector('.scene-selection video[src="materials/drawer_sponge.mp4"]');
     const uncoverThumbnail = document.querySelector('.scene-selection video[src="materials/uncover_pen-final.mp4"]');
     const ggThumbnail = document.querySelector('.scene-selection video[src="materials/gg_left.mp4"]');
     const scThumbnail = document.querySelector('.scene-selection video[src="materials/sc_left.mp4"]');
@@ -142,34 +167,54 @@ function chooseScene(scene, event) {
         source.src = 'materials/cut_carrot-final.mp4'; // Load the initial video for kitchen scene
         kitchenButtons.style.display = 'flex';
         switchButtons.style.display = 'none';
+        drawerButtons.style.display = 'none';
 	uncoverButtons.style.display = 'none';
 	ggButtons.style.display = 'none';
 	scButtons.style.display = 'none';
         kitchenThumbnail.classList.remove('faded');
         switchThumbnail.classList.add('faded');
         uncoverThumbnail.classList.add('faded');
+        drawerThumbnail.classList.add('faded');
 	ggThumbnail.classList.add('faded');
 	scThumbnail.classList.add('faded');
     } else if (scene === 'switch') {
         source.src = 'materials/press_left-final.mp4'; // Load the initial video for switch scene
         kitchenButtons.style.display = 'none';
         switchButtons.style.display = 'flex';
+        drawerButtons.style.display = 'none';
 	uncoverButtons.style.display = 'none';
 	ggButtons.style.display = 'none';
 	scButtons.style.display = 'none';
         kitchenThumbnail.classList.add('faded');
         switchThumbnail.classList.remove('faded');
+        drawerThumbnail.classList.add('faded');
         uncoverThumbnail.classList.add('faded');
 	ggThumbnail.classList.add('faded');
 	scThumbnail.classList.add('faded');
+    } else if (scene === 'drawer') {
+        source.src = 'materials/drawer_sponge.mp4'; // Load the initial video for switch scene
+        kitchenButtons.style.display = 'none';
+        switchButtons.style.display = 'none';
+        drawerButtons.style.display = 'flex';
+	uncoverButtons.style.display = 'none';
+	ggButtons.style.display = 'none';
+	scButtons.style.display = 'none';
+        kitchenThumbnail.classList.add('faded');
+        drawerThumbnail.classList.remove('faded');
+        switchThumbnail.classList.add('faded');
+        uncoverThumbnail.classList.add('faded');
+	ggThumbnail.classList.add('faded');
+      scThumbnail.classList.add('faded');
     } else if (scene === 'uncover') {
         source.src = 'materials/uncover_pen-final.mp4'; // Load the initial video for switch scene
         kitchenButtons.style.display = 'none';
         switchButtons.style.display = 'none';
+        drawerButtons.style.display = 'none';
 	uncoverButtons.style.display = 'flex';
 	ggButtons.style.display = 'none';
 	scButtons.style.display = 'none';
         kitchenThumbnail.classList.add('faded');
+        drawerThumbnail.classList.remove('faded');
         switchThumbnail.classList.add('faded');
         uncoverThumbnail.classList.remove('faded');
 	ggThumbnail.classList.add('faded');
@@ -178,11 +223,13 @@ function chooseScene(scene, event) {
         source.src = 'materials/gg_left.mp4'; // Load the initial video for switch scene
         kitchenButtons.style.display = 'none';
         switchButtons.style.display = 'none';
+        drawerButtons.style.display = 'none';
 	uncoverButtons.style.display = 'none';
 	ggButtons.style.display = 'flex';
 	scButtons.style.display = 'none';
         kitchenThumbnail.classList.add('faded');
         switchThumbnail.classList.add('faded');
+        drawerThumbnail.classList.remove('faded');
         uncoverThumbnail.classList.add('faded');
 	ggThumbnail.classList.remove('faded');
 	scThumbnail.classList.add('faded');	
@@ -190,16 +237,16 @@ function chooseScene(scene, event) {
         source.src = 'materials/sc_left.mp4'; // Load the initial video for switch scene
         kitchenButtons.style.display = 'none';
         switchButtons.style.display = 'none';
+        drawerButtons.style.display = 'none';
 	uncoverButtons.style.display = 'none';
 	ggButtons.style.display = 'none';
 	scButtons.style.display = 'flex';
         kitchenThumbnail.classList.add('faded');
         switchThumbnail.classList.add('faded');
+        drawerThumbnail.classList.remove('faded');
         uncoverThumbnail.classList.add('faded');
 	ggThumbnail.classList.add('faded');
 	scThumbnail.classList.remove('faded');	
     }
-    
-    
     videoPlayer.load(); // This loads the new video but doesn't play it.
 }

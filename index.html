@@ -37,7 +37,7 @@
 <article class='blog-post'>
 
   <div class=blog-intro-container>
-  <h1 class='too-long'>UniSim: Learning Interactive Real-World Simulators</h1>
+  <h1 class='too-long' style="text-align:center;">UniSim: Learning Interactive Real-World Simulators</h1>
 
     <div id="authors">
         <center>
@@ -59,7 +59,7 @@
         </div>
     </div>  
   </div>  
-
+  
       
 <div id="video-player-container">
 
@@ -70,6 +70,7 @@
     <ul>
         <li><a href="#" onclick="chooseScene('kitchen', event);" title="Kitchen Scene"><video src="materials/cut_carrot-final.mp4" width="150"></video></a></li>
         <li><a href="#" onclick="chooseScene('uncover', event);" title="Uncover Scene"><video src="materials/uncover_pen-final.mp4" width="150" class="faded"></video></a></li>
+        <li><a href="#" onclick="chooseScene('drawer', event);" title="Drawer Scene"><video src="materials/drawer_sponge.mp4" width="150" class="faded"></video></a></li>        
         <li><a href="#" onclick="chooseScene('switch', event);" title="Switch Press Scene"><video src="materials/press_left-final.mp4" width="150" class="faded"></video></a></li>	
 	<li><a href="#" onclick="chooseScene('gg', event);" title="Golden Gate Scene"><video src="materials/gg_left.mp4" width="150" class="faded"></video></a></li>
 	<li><a href="#" onclick="chooseScene('sc', event);" title="Sistine Chapel Scene"><video src="materials/sc_left.mp4" width="150" class="faded"></video></a></li>	
@@ -116,6 +117,26 @@
       <!-- Secondary buttons will be added dynamically -->
     </ul>
   </div>  
+</div>
+
+<!-- Drawer -->
+<div class="video-buttons" id="drawer-buttons" style="display: none;">
+  <div class="step-container">
+    <div class="step-label">Step 1:</div> <!-- Step label for primary buttons -->
+    <ul>
+      <li><a href="#" onclick="playVideo('materials/drawer_sponge.mp4', 'drawer_sponge', event);">Put sponge in drawer</a></li>      
+      <li><a href="#" onclick="playVideo('materials/drawer_bottom.mp4', 'drawer_bottom', event);">Close bottom drawer</a></li>
+      <li><a href="#" onclick="playVideo('materials/drawer_middle.mp4', 'drawer_middle', event);">Open middle drawer</a></li>
+      <li><a href="#" onclick="playVideo('materials/drawer_top.mp4', 'drawer_top', event);">Open top drawer</a></li>
+    </ul>
+  </div>
+
+  <div class="step-container" id="drawer-step2-container" style="display:none;">
+    <div class="step-label">Step 2:</div>
+    <ul id="drawer-secondary-buttons" style="display:none;">
+      <!-- Secondary buttons will be added dynamically -->
+    </ul>
+  </div>
 </div>
 
 <!-- Buttons for Switch Scene -->

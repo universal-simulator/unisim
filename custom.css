@@ -205,7 +205,7 @@ nav a:hover {
 }
 
 #video-player-container {
-    max-width: 1000px; /* Or your preferred width */
+    max-width: 1400px; /* Or your preferred width */
     margin: 20px auto; /* Center the container */
     padding: 20px;
     border: 5px solid #000; /* Adding a border */
