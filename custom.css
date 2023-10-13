@@ -42,6 +42,26 @@ nav a:hover {
     background-color: #ddd; /* color change on hover */
 }
 
+/* Mobile styles */
+@media (max-width: 768px) {
+    nav ul {
+        justify-content: center; /* Center-align the menu items */
+        flex-direction: column; /* Stack menu items vertically */
+        align-items: center; /* Center-align the text and buttons */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Add space between menu items */
+    }
+
+    nav a {
+        display: block; /* Make buttons full width */
+        width: 100%; /* Full width for buttons */
+        text-align: center; /* Center-align text on buttons */
+        margin: 10px 0; /* Add space between buttons */
+    }
+}
+
 .section-anchor {
     display: block;
     padding-top: 70px;     /* Adjust this based on your navbar height */
@@ -270,4 +290,53 @@ h2 {
     width: auto;
     display: block; /* this will remove any whitespace underneath the image */
     border: none; /* remove any border */
+}
+
+
+/* Mobiule friendly */
+/* Default styles (optimized for mobile) */
+#video-player-container {
+    max-width: 100%; /* Adjust to your preferred width */
+    margin: 20px auto; /* Center the container */
+    padding: 20px;
+    border: 5px solid #000; /* Adding a border */
+    border-radius: 15px; /* Rounded edges */
+    background-color: #1e1e1e; /* Dark background for video player effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    position: relative; /* To position potential child elements absolutely if required */
+}
+
+.single-image video {
+    max-width: 100%; /* Make the video responsive */
+    height: auto; /* Automatically adjust height */
+}
+
+/* Thumbnails */
+.scene-selection ul li a video {
+    max-width: 100%; /* Make the thumbnails responsive */
+    display: block;
+    margin: 0 auto;
+}
+
+/* Buttons */
+.video-buttons ul li {
+    display: flex;
+    justify-content: center; /* Horizontally center the anchor tags */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.video-buttons ul li a {
+    display: block;
+    text-align: center;
+    width: 100%; /* Make the buttons full width on mobile */
+    max-width: 300px; /* Adjust the max-width to your preference */
+    margin: 0 auto; /* Center the buttons horizontally */
+}
+
+/* Desktop styles (unchanged width) */
+@media screen and (min-width: 768px) {
+    #video-player-container {
+        max-width: 1400px; /* Keep the width the same as before */
+    }
 }
