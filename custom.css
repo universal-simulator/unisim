@@ -44,22 +44,9 @@ nav a:hover {
 
 /* Mobile styles */
 @media (max-width: 768px) {
-    nav ul {
-        justify-content: center; /* Center-align the menu items */
-        flex-direction: column; /* Stack menu items vertically */
-        align-items: center; /* Center-align the text and buttons */
-    }
-
-    nav ul li {
-        margin: 10px 0; /* Add space between menu items */
-    }
-
-    nav a {
-        display: block; /* Make buttons full width */
-        width: 100%; /* Full width for buttons */
-        text-align: center; /* Center-align text on buttons */
-        margin: 10px 0; /* Add space between buttons */
-    }
+    nav {
+        display: none;
+    }  
 }
 
 .section-anchor {
@@ -320,23 +307,13 @@ h2 {
 
 /* Buttons */
 .video-buttons ul li {
-    display: flex;
-    justify-content: center; /* Horizontally center the anchor tags */
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.video-buttons ul li a {
-    display: block;
-    text-align: center;
-    width: 100%; /* Make the buttons full width on mobile */
-    max-width: 300px; /* Adjust the max-width to your preference */
-    margin: 0 auto; /* Center the buttons horizontally */
+  display: flex;
+  flex-direction: row;  
 }
 
 /* Desktop styles (unchanged width) */
 @media screen and (min-width: 768px) {
     #video-player-container {
-        max-width: 1400px; /* Keep the width the same as before */
+        max-width: 1100px; /* Keep the width the same as before */
     }
 }

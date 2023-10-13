@@ -71,7 +71,7 @@ function playVideo(videoSrc, primaryAction, event) {
 	    }
 
 	    // Show the secondary buttons
-	  secondaryButtonsContainer.style.display = 'block';
+	  secondaryButtonsContainer.style.display = 'flex';
         } else if (primaryAction.startsWith('drawer')) {
             secondaryButtonsContainer = document.getElementById('drawer-secondary-buttons');
             document.getElementById('drawer-step2-container').style.display = 'flex';
@@ -99,7 +99,7 @@ function playVideo(videoSrc, primaryAction, event) {
 	    }
 
 	    // Show the secondary buttons
-	    secondaryButtonsContainer.style.display = 'block';
+	    secondaryButtonsContainer.style.display = 'flex';
 	} else if (primaryAction.startsWith('uncover')) {
             secondaryButtonsContainer = document.getElementById('uncover-secondary-buttons');
             document.getElementById('uncover-step2-container').style.display = 'flex';
@@ -137,7 +137,7 @@ function playVideo(videoSrc, primaryAction, event) {
                 `;		
 	    }
 	    
-	    secondaryButtonsContainer.style.display = 'block';
+	    secondaryButtonsContainer.style.display = 'flex';
 	}
     }
 }
