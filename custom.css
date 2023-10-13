@@ -284,9 +284,9 @@ h2 {
 /* Default styles (optimized for mobile) */
 #video-player-container {
     max-width: 100%; /* Adjust to your preferred width */
-    margin: 20px auto; /* Center the container */
-    padding: 20px;
-    border: 5px solid #000; /* Adding a border */
+    margin: 5px auto; /* Center the container */
+    padding: 5px;
+    border: 1px solid #000; /* Adding a border */
     border-radius: 15px; /* Rounded edges */
     background-color: #1e1e1e; /* Dark background for video player effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
