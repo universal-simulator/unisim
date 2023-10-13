@@ -99,13 +99,6 @@ nav a:hover {
     margin: 0 15px;
 }
 
-.scene-selection ul li a img {
-    max-width: 150px;  /* Adjust as needed */
-    border-radius: 15px; /* Matching the style */
-    border: 1px solid black;
-    transition: box-shadow 0.3s;
-}
-
 .scene-selection ul li a:hover img {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -120,7 +113,7 @@ nav a:hover {
 }
 
 .scene-selection ul li a video {
-    max-width: 90%;
+    max-width: 100%;
     display: block;
     margin: 0 auto;
 }
@@ -302,7 +295,7 @@ h2 {
 .scene-selection ul li a video {
     max-width: 100%; /* Make the thumbnails responsive */
     display: block;
-    margin: 0 auto;
+    margin: 0 0;
 }
 
 /* Buttons */
