@@ -69,8 +69,10 @@
     <ul>
         <li><a href="#" onclick="chooseScene('kitchen', event);" title="Kitchen Scene"><video src="materials/cut_carrot-final.mp4" width="150"></video></a></li>
         <li><a href="#" onclick="chooseScene('uncover', event);" title="Uncover Scene"><video src="materials/uncover_pen-final.mp4" width="150" class="faded"></video></a></li>
-        <li><a href="#" onclick="chooseScene('drawer', event);" title="Drawer Scene"><video src="materials/drawer_sponge.mp4" width="150" class="faded"></video></a></li>        
         <li><a href="#" onclick="chooseScene('switch', event);" title="Switch Press Scene"><video src="materials/press_left-final.mp4" width="150" class="faded"></video></a></li>	
+        <li><a href="#" onclick="chooseScene('drawer', event);" title="Drawer Scene"><video src="materials/drawer_sponge.mp4" width="150" class="faded"></video></a></li>
+        <li><a href="#" onclick="chooseScene('robot', event);" title="Robot Scene"><video src="materials/left-final.mp4" width="150" class="faded"></video></a></li>
+        <li><a href="#" onclick="chooseScene('austin', event);" title="Austin Scene"><video src="materials/airfryer_final.mp4" width="150" class="faded"></video></a></li>        
 	<li><a href="#" onclick="chooseScene('gg', event);" title="Golden Gate Scene"><video src="materials/gg_left.mp4" width="150" class="faded"></video></a></li>
 	<li><a href="#" onclick="chooseScene('sc', event);" title="Sistine Chapel Scene"><video src="materials/sc_left.mp4" width="150" class="faded"></video></a></li>	
     </ul>
@@ -85,8 +87,19 @@
       <li><a href="#" onclick="playVideo('materials/pick_bowl-final.mp4', 'kitchen_pick', event);">Pick up bowl</a></li>
       <li><a href="#" onclick="playVideo('materials/cut_carrot-final.mp4', 'kitchen_cut', event);">Cut carrots</a></li>
       <li><a href="#" onclick="playVideo('materials/dry_hand-final.mp4', 'kitchen_dry', event);">Dry hands</a></li>
+      <button id="moreButton">...</button>
     </ul>
   </div>
+
+  <div class="step-container-more" style="display:none;">
+    <ul>
+      <li><a href="#" onclick="playVideo('materials/kitchen_left-final.mp4', '', event);">Turn left</a></li>
+      <li><a href="#" onclick="playVideo('materials/kitchen_right-final.mp4', '', event);">Turn right</a></li>
+      <li><a href="#" onclick="playVideo('materials/kitchen_down-final.mp4', '', event);">Look down</a></li>
+      <li><a href="#" onclick="playVideo('materials/kitchen_zoomin-final.mp4', '', event);">Zoom in</a></li>
+      <li><a href="#" onclick="playVideo('materials/kitchen_up-final.mp4', '', event);">Zoom out</a></li>            
+    </ul>
+  </div>  
 
   <div class="step-container" id="step2-container" style="display:none;">
     <div class="step-label">Step 2:</div>
@@ -137,6 +150,33 @@
     </ul>
   </div>
 </div>
+
+<!-- Robot -->
+<div class="video-buttons" id="robot-buttons" style="display: none;">
+  <div class="step-container">
+    <div class="step-label">Step 1:</div> <!-- Step label for primary buttons -->
+    <ul>
+      <li><a href="#" onclick="playVideo('materials/left-final.mp4', '', event);">Move left</a></li>      
+      <li><a href="#" onclick="playVideo('materials/right-final.mp4', '', event);">Move right</a></li>
+      <li><a href="#" onclick="playVideo('materials/up-final.mp4', '', event);">Move up</a></li>
+      <li><a href="#" onclick="playVideo('materials/down-final.mp4', '', event);">Move down</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Austin -->
+<div class="video-buttons" id="austin-buttons" style="display: none;">
+  <div class="step-container">
+    <div class="step-label">Step 1:</div> <!-- Step label for primary buttons -->
+    <ul>
+      <li><a href="#" onclick="playVideo('materials/airfryer_final.mp4', '', event);">Open air fryer</a></li>
+      <li><a href="#" onclick="playVideo('materials/bowl_final.mp4', '', event);">Pickup bowl</a></li>
+      <li><a href="#" onclick="playVideo('materials/cup_final.mp4', '', event);">Pickup cup</a></li>
+      <li><a href="#" onclick="playVideo('materials/sponge_final.mp4', '', event);">Pickup sponge</a></li>
+    </ul>
+  </div>
+</div>
+
 
 <!-- Buttons for Switch Scene -->
 <div class="video-buttons" id="switch-buttons" style="display: none;">

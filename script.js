@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+let secondaryButtonsContainer; // Reference to the container holding secondary buttons
+
 function playVideo(videoSrc, primaryAction, event) {
     event.preventDefault();
 
@@ -39,7 +41,6 @@ function playVideo(videoSrc, primaryAction, event) {
     videoPlayer.load();
     videoPlayer.play();
 
-    let secondaryButtonsContainer; // Reference to the container holding secondary buttons
 
     // If a primary action is provided, then set secondary buttons
     if(primaryAction) {
@@ -139,6 +140,8 @@ function playVideo(videoSrc, primaryAction, event) {
 	    
 	    secondaryButtonsContainer.style.display = 'flex';
 	}
+    } else if (primaryAction == '') {
+        secondaryButtonsContainer.style.display = 'none';
     }
 }
 
@@ -151,6 +154,8 @@ function chooseScene(scene, event) {
     const kitchenButtons = document.getElementById('kitchen-buttons');
     const switchButtons = document.getElementById('switch-buttons');
     const drawerButtons = document.getElementById('drawer-buttons');
+    const robotButtons = document.getElementById('robot-buttons');
+    const austinButtons = document.getElementById('austin-buttons');
     const uncoverButtons = document.getElementById('uncover-buttons');
     const ggButtons = document.getElementById('gg-buttons');
     const scButtons = document.getElementById('sc-buttons');
@@ -158,6 +163,8 @@ function chooseScene(scene, event) {
     const kitchenThumbnail = document.querySelector('.scene-selection video[src="materials/cut_carrot-final.mp4"]');
     const switchThumbnail = document.querySelector('.scene-selection video[src="materials/press_left-final.mp4"]');
     const drawerThumbnail = document.querySelector('.scene-selection video[src="materials/drawer_sponge.mp4"]');
+    const robotThumbnail = document.querySelector('.scene-selection video[src="materials/left-final.mp4"]');
+    const austinThumbnail = document.querySelector('.scene-selection video[src="materials/airfryer_final.mp4"]');
     const uncoverThumbnail = document.querySelector('.scene-selection video[src="materials/uncover_pen-final.mp4"]');
     const ggThumbnail = document.querySelector('.scene-selection video[src="materials/gg_left.mp4"]');
     const scThumbnail = document.querySelector('.scene-selection video[src="materials/sc_left.mp4"]');
@@ -168,6 +175,8 @@ function chooseScene(scene, event) {
         kitchenButtons.style.display = 'flex';
         switchButtons.style.display = 'none';
         drawerButtons.style.display = 'none';
+        robotButtons.style.display = 'none';
+        austinButtons.style.display = 'none';
 	uncoverButtons.style.display = 'none';
 	ggButtons.style.display = 'none';
 	scButtons.style.display = 'none';
@@ -175,6 +184,8 @@ function chooseScene(scene, event) {
         switchThumbnail.classList.add('faded');
         uncoverThumbnail.classList.add('faded');
         drawerThumbnail.classList.add('faded');
+        robotThumbnail.classList.add('faded');
+        austinThumbnail.classList.add('faded');
 	ggThumbnail.classList.add('faded');
 	scThumbnail.classList.add('faded');
     } else if (scene === 'switch') {
@@ -182,71 +193,140 @@ function chooseScene(scene, event) {
         kitchenButtons.style.display = 'none';
         switchButtons.style.display = 'flex';
         drawerButtons.style.display = 'none';
+        robotButtons.style.display = 'none';
 	uncoverButtons.style.display = 'none';
 	ggButtons.style.display = 'none';
 	scButtons.style.display = 'none';
         kitchenThumbnail.classList.add('faded');
         switchThumbnail.classList.remove('faded');
         drawerThumbnail.classList.add('faded');
+        robotThumbnail.classList.add('faded');
         uncoverThumbnail.classList.add('faded');
 	ggThumbnail.classList.add('faded');
 	scThumbnail.classList.add('faded');
+        austinButtons.style.display = 'none';
+        austinThumbnail.classList.add('faded');
     } else if (scene === 'drawer') {
         source.src = 'materials/drawer_sponge.mp4'; // Load the initial video for switch scene
         kitchenButtons.style.display = 'none';
         switchButtons.style.display = 'none';
         drawerButtons.style.display = 'flex';
+        robotButtons.style.display = 'none';
 	uncoverButtons.style.display = 'none';
 	ggButtons.style.display = 'none';
 	scButtons.style.display = 'none';
         kitchenThumbnail.classList.add('faded');
         drawerThumbnail.classList.remove('faded');
+        robotThumbnail.classList.add('faded');
         switchThumbnail.classList.add('faded');
         uncoverThumbnail.classList.add('faded');
 	ggThumbnail.classList.add('faded');
-      scThumbnail.classList.add('faded');
+        scThumbnail.classList.add('faded');
+        austinButtons.style.display = 'none';
+        austinThumbnail.classList.add('faded');        
     } else if (scene === 'uncover') {
         source.src = 'materials/uncover_pen-final.mp4'; // Load the initial video for switch scene
         kitchenButtons.style.display = 'none';
         switchButtons.style.display = 'none';
         drawerButtons.style.display = 'none';
+        robotButtons.style.display = 'none';
 	uncoverButtons.style.display = 'flex';
 	ggButtons.style.display = 'none';
 	scButtons.style.display = 'none';
         kitchenThumbnail.classList.add('faded');
-        drawerThumbnail.classList.remove('faded');
+        drawerThumbnail.classList.add('faded');
+        robotThumbnail.classList.add('faded');
         switchThumbnail.classList.add('faded');
         uncoverThumbnail.classList.remove('faded');
 	ggThumbnail.classList.add('faded');
 	scThumbnail.classList.add('faded');
+        austinButtons.style.display = 'none';
+        austinThumbnail.classList.add('faded');        
     } else if (scene === 'gg') {
         source.src = 'materials/gg_left.mp4'; // Load the initial video for switch scene
         kitchenButtons.style.display = 'none';
         switchButtons.style.display = 'none';
         drawerButtons.style.display = 'none';
+        robotButtons.style.display = 'none';
 	uncoverButtons.style.display = 'none';
 	ggButtons.style.display = 'flex';
 	scButtons.style.display = 'none';
         kitchenThumbnail.classList.add('faded');
         switchThumbnail.classList.add('faded');
-        drawerThumbnail.classList.remove('faded');
+        drawerThumbnail.classList.add('faded');
+        robotThumbnail.classList.add('faded');
         uncoverThumbnail.classList.add('faded');
 	ggThumbnail.classList.remove('faded');
 	scThumbnail.classList.add('faded');	
+        austinButtons.style.display = 'none';
+        austinThumbnail.classList.add('faded');        
     } else if (scene === 'sc') {
         source.src = 'materials/sc_left.mp4'; // Load the initial video for switch scene
         kitchenButtons.style.display = 'none';
         switchButtons.style.display = 'none';
         drawerButtons.style.display = 'none';
+        robotButtons.style.display = 'none';
 	uncoverButtons.style.display = 'none';
 	ggButtons.style.display = 'none';
 	scButtons.style.display = 'flex';
         kitchenThumbnail.classList.add('faded');
         switchThumbnail.classList.add('faded');
-        drawerThumbnail.classList.remove('faded');
+        drawerThumbnail.classList.add('faded');
+        robotThumbnail.classList.add('faded');
         uncoverThumbnail.classList.add('faded');
 	ggThumbnail.classList.add('faded');
 	scThumbnail.classList.remove('faded');	
+        austinButtons.style.display = 'none';
+        austinThumbnail.classList.add('faded');        
+    } else if (scene === 'robot') {
+        source.src = 'materials/left-final.mp4'; // Load the initial video for switch scene
+        kitchenButtons.style.display = 'none';
+        switchButtons.style.display = 'none';
+        drawerButtons.style.display = 'none';
+        robotButtons.style.display = 'none';
+        robotButtons.style.display = 'flex';
+	uncoverButtons.style.display = 'none';
+	ggButtons.style.display = 'none';
+	scButtons.style.display = 'none';
+        kitchenThumbnail.classList.add('faded');
+        switchThumbnail.classList.add('faded');
+        drawerThumbnail.classList.add('faded');
+        robotThumbnail.classList.remove('faded');
+        uncoverThumbnail.classList.add('faded');
+	ggThumbnail.classList.add('faded');
+	scThumbnail.classList.add('faded');	
+        austinButtons.style.display = 'none';
+        austinThumbnail.classList.add('faded');        
+    } else if (scene === 'austin') {
+        source.src = 'materials/airfryer_final.mp4'; // Load the initial video for switch scene
+        kitchenButtons.style.display = 'none';
+        switchButtons.style.display = 'none';
+        drawerButtons.style.display = 'none';
+        robotButtons.style.display = 'none';
+        robotButtons.style.display = 'none';
+	uncoverButtons.style.display = 'none';
+	ggButtons.style.display = 'none';
+	scButtons.style.display = 'none';
+        kitchenThumbnail.classList.add('faded');
+        switchThumbnail.classList.add('faded');
+        drawerThumbnail.classList.add('faded');
+        robotThumbnail.classList.add('faded');
+        uncoverThumbnail.classList.add('faded');
+	ggThumbnail.classList.add('faded');
+	scThumbnail.classList.add('faded');	
+        austinButtons.style.display = 'flex';
+        austinThumbnail.classList.remove('faded');        
     }
     videoPlayer.load(); // This loads the new video but doesn't play it.
 }
+
+document.getElementById('moreButton').addEventListener('click', function() {
+  var moreContent = document.querySelector('.step-container-more');
+  if (moreContent.style.display === 'none' || moreContent.style.display === '') {
+    moreContent.style.display = 'block';
+  } else {
+      moreContent.style.display = 'none';
+  }
+    secondaryButtonsContainer.style.display = 'none';    
+});
+

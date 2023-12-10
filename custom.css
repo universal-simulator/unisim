@@ -307,6 +307,6 @@ h2 {
 /* Desktop styles (unchanged width) */
 @media screen and (min-width: 768px) {
     #video-player-container {
-        max-width: 1100px; /* Keep the width the same as before */
+        max-width: 1200px; /* Keep the width the same as before */
     }
 }
